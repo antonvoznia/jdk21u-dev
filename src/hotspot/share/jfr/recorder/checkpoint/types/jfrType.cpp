@@ -37,7 +37,6 @@
 #include "jfr/recorder/checkpoint/types/jfrThreadState.hpp"
 #include "jfr/recorder/checkpoint/types/jfrType.hpp"
 #include "jfr/recorder/jfrRecorder.hpp"
-#include "jfr/recorder/checkpoint/types/jfrThreadGroup.hpp"
 #include "jfr/recorder/checkpoint/types/jfrThreadState.hpp"
 #include "jfr/support/jfrThreadLocal.hpp"
 #include "jfr/writers/jfrJavaEventWriter.hpp"

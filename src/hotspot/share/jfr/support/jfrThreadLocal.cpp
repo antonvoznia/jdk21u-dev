@@ -128,7 +128,6 @@ void JfrThreadLocal::on_start(Thread* t) {
     }
     JavaThread* const jt = JavaThread::cast(t);
     if (jt->thread_state() == _thread_new) {
-      JfrCPUTimeThreadSampling::on_javathread_create(jt);
     } else {
       assert(jt->thread_state() == _thread_in_vm, "invariant");
       if (tl->should_write()) {
@@ -240,7 +239,6 @@ void JfrThreadLocal::on_exit(Thread* t) {
         JfrCheckpointManager::write_checkpoint(t);
       }
       send_java_thread_end_event(jt, JfrThreadLocal::jvm_thread_id(jt));
-      JfrCPUTimeThreadSampling::on_javathread_terminate(jt);
       JfrThreadCPULoadEvent::send_event_for_thread(jt);
     }
   }
